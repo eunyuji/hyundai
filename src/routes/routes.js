@@ -36,6 +36,8 @@ import GoogleMaps from 'src/components/Dashboard/Views/Maps/GoogleMaps.vue'
 import FullScreenMap from 'src/components/Dashboard/Views/Maps/FullScreenMap.vue'
 import VectorMaps from 'src/components/Dashboard/Views/Maps/VectorMapsPage.vue'
 
+// Main
+import Main from 'src/components/Dashboard/Views/Main/Index.vue'
 // Calendar
 import Calendar from 'src/components/Dashboard/Views/Calendar/CalendarRoute.vue'
 // Charts
@@ -197,8 +199,13 @@ const routes = [
   {
     path: '/',
     component: DashboardLayout,
-    redirect: '/admin/overview',
+    redirect: '',
     children: [
+      {
+        path: '',
+        name: 'Main',
+        component: Main
+      },
       {
         path: 'calendar',
         name: 'Calendar',
