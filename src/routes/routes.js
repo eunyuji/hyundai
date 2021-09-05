@@ -1,178 +1,135 @@
-import DashboardLayout from '../components/Dashboard/Layout/DashboardLayout.vue'
-// GeneralViews
-import NotFound from '../components/GeneralViews/NotFoundPage.vue'
-// Dashboard pages
-import Overview from 'src/components/Dashboard/Views/Dashboard/Overview.vue'
-import Stats from 'src/components/Dashboard/Views/Dashboard/Stats.vue'
-
-// Pages
-import User from 'src/components/Dashboard/Views/Pages/UserProfile.vue'
-import TimeLine from 'src/components/Dashboard/Views/Pages/TimeLinePage.vue'
-import Login from 'src/components/Dashboard/Views/Pages/Login.vue'
-import Register from 'src/components/Dashboard/Views/Pages/Register.vue'
-import Lock from 'src/components/Dashboard/Views/Pages/Lock.vue'
-
-// Components pages
-import Buttons from 'src/components/Dashboard/Views/Components/Buttons.vue'
-import GridSystem from 'src/components/Dashboard/Views/Components/GridSystem.vue'
-import Panels from 'src/components/Dashboard/Views/Components/Panels.vue'
-import SweetAlert from 'src/components/Dashboard/Views/Components/SweetAlert.vue'
-import Notifications from 'src/components/Dashboard/Views/Components/Notifications.vue'
-import Icons from 'src/components/Dashboard/Views/Components/Icons.vue'
-import Typography from 'src/components/Dashboard/Views/Components/Typography.vue'
-
-// Forms pages
-import RegularForms from 'src/components/Dashboard/Views/Forms/RegularForms.vue'
-import ExtendedForms from 'src/components/Dashboard/Views/Forms/ExtendedForms.vue'
-import ValidationForms from 'src/components/Dashboard/Views/Forms/ValidationForms.vue'
-import Wizard from 'src/components/Dashboard/Views/Forms/Wizard.vue'
-
-// TableList pages
-import RegularTables from 'src/components/Dashboard/Views/Tables/RegularTables.vue'
-import ExtendedTables from 'src/components/Dashboard/Views/Tables/ExtendedTables.vue'
-import PaginatedTables from 'src/components/Dashboard/Views/Tables/PaginatedTables.vue'
-// Maps pages
-import GoogleMaps from 'src/components/Dashboard/Views/Maps/GoogleMaps.vue'
-import FullScreenMap from 'src/components/Dashboard/Views/Maps/FullScreenMap.vue'
-import VectorMaps from 'src/components/Dashboard/Views/Maps/VectorMapsPage.vue'
-
-// Main
-import Main from 'src/components/Dashboard/Views/Main/Index.vue'
-// Calendar
-import Calendar from 'src/components/Dashboard/Views/Calendar/CalendarRoute.vue'
-// Charts
-import Charts from 'src/components/Dashboard/Views/Charts.vue'
+import { layouts, NotFound, Pages, userPages, Components, Forms, Tables, Maps } from 'src/utils/global-methods.js'
 
 let componentsMenu = {
   path: '/components',
-  component: DashboardLayout,
+  component: layouts('DashboardLayout.vue'),
   redirect: '/components/buttons',
   children: [
     {
       path: 'buttons',
       name: 'Buttons',
-      component: Buttons
+      component: Components('Buttons.vue')
     },
     {
       path: 'grid-system',
       name: 'Grid System',
-      component: GridSystem
+      component: Components('GridSystem.vue')
     },
     {
       path: 'panels',
       name: 'Panels',
-      component: Panels
+      component: Components('Panels.vue')
     },
     {
       path: 'sweet-alert',
       name: 'Sweet Alert',
-      component: SweetAlert
+      component: Components('SweetAlert.vue')
     },
     {
       path: 'notifications',
       name: 'Notifications',
-      component: Notifications
+      component: Components('Notifications.vue')
     },
     {
       path: 'icons',
       name: 'Icons',
-      component: Icons
+      component: Components('Icons.vue')
     },
     {
       path: 'typography',
       name: 'Typography',
-      component: Typography
+      component: Components('Typography.vue')
     }
 
   ]
 }
 let formsMenu = {
   path: '/forms',
-  component: DashboardLayout,
+  component: layouts('DashboardLayout.vue'),
   redirect: '/forms/regular',
   children: [
     {
       path: 'regular',
       name: 'Regular Forms',
-      component: RegularForms
+      component: Forms('RegularForms.vue')
     },
     {
       path: 'extended',
       name: 'Extended Forms',
-      component: ExtendedForms
+      component: Forms('ExtendedForms.vue')
     },
     {
       path: 'validation',
       name: 'Validation Forms',
-      component: ValidationForms
+      component: Forms('ValidationForms.vue')
     },
     {
       path: 'wizard',
       name: 'Wizard',
-      component: Wizard
+      component: Forms('Wizard.vue')
     }
   ]
 }
 
 let tablesMenu = {
   path: '/table-list',
-  component: DashboardLayout,
+  component: layouts('DashboardLayout.vue'),
   redirect: '/table-list/regular',
   children: [
     {
       path: 'regular',
       name: 'Regular Tables',
-      component: RegularTables
+      component: Tables('RegularTables.vue')
     },
     {
       path: 'extended',
       name: 'Extended Tables',
-      component: ExtendedTables
+      component: Tables('ExtendedTables.vue')
     },
     {
       path: 'paginated',
       name: 'Paginated Tables',
-      component: PaginatedTables
+      component: Tables('PaginatedTables.vue')
     }]
 }
 
 let mapsMenu = {
   path: '/maps',
-  component: DashboardLayout,
+  component: layouts('DashboardLayout.vue'),
   redirect: '/maps/google',
   children: [
     {
       path: 'google',
       name: 'Google Maps',
-      component: GoogleMaps
+      component: Maps('GoogleMaps.vue')
     },
     {
       path: 'full-screen',
       name: 'Full Screen Map',
-      component: FullScreenMap
+      component: Maps('FullScreenMap.vue')
     },
     {
       path: 'vector-map',
       name: 'Vector Map',
-      component: VectorMaps
+      component: Maps('VectorMapsPage.vue')
     }
   ]
 }
 
 let pagesMenu = {
   path: '/pages',
-  component: DashboardLayout,
+  component: layouts('DashboardLayout.vue'),
   redirect: '/pages/user',
   children: [
     {
       path: 'user',
       name: 'User Page',
-      component: User
+      component: userPages('UserProfile.vue')
     },
     {
       path: 'timeline',
       name: 'Timeline Page',
-      component: TimeLine
+      component: userPages('TimeLinePage.vue')
     }
   ]
 }
@@ -180,41 +137,41 @@ let pagesMenu = {
 let loginPage = {
   path: '/login',
   name: 'Login',
-  component: Login
+  component: userPages('Login.vue')
 }
 
 let registerPage = {
   path: '/register',
   name: 'Register',
-  component: Register
+  component: userPages('Register.vue')
 }
 
 let lockPage = {
   path: '/lock',
   name: 'Lock',
-  component: Lock
+  component: userPages('Lock.vue')
 }
 
 const routes = [
   {
     path: '/',
-    component: DashboardLayout,
+    component: layouts('DashboardLayout.vue'),
     redirect: '',
     children: [
       {
         path: '',
         name: 'Main',
-        component: Main
+        component: Pages('Main/Index.vue')
       },
       {
         path: 'calendar',
         name: 'Calendar',
-        component: Calendar
+        component: Pages('Calendar/CalendarRoute.vue')
       },
       {
         path: 'charts',
         name: 'Charts',
-        component: Charts
+        component: Pages('Charts.vue')
       }
     ]
   },
@@ -228,18 +185,18 @@ const routes = [
   lockPage,
   {
     path: '/admin',
-    component: DashboardLayout,
+    component: layouts('DashboardLayout.vue'),
     redirect: '/admin/overview',
     children: [
       {
         path: 'overview',
         name: 'Overview',
-        component: Overview
+        component: Pages('Dashboard/Overview.vue')
       },
       {
         path: 'stats',
         name: 'Stats',
-        component: Stats
+        component: Pages('Dashboard/Stats.vue')
       }
     ]
   },
