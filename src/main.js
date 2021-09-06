@@ -23,6 +23,7 @@ import './assets/sass/element_variables.scss'
 import './assets/sass/demo.scss'
 
 import sidebarLinks from './sidebarLinks'
+Vue.config.productionTip = false
 // plugin setup
 Vue.use(VueRouter)
 Vue.use(GlobalDirectives)

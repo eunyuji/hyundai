@@ -1,4 +1,4 @@
-import { layouts, NotFound, Pages } from 'src/utils/global-methods.js'
+import { layouts, ViewPages, NotFound } from 'src/utils/global-methods.js'
 import guide from 'src/routes/guide'
 const routes = [
   {
@@ -9,7 +9,7 @@ const routes = [
       {
         path: '',
         name: 'Main',
-        component: Pages('Main/Index.vue')
+        component: ViewPages('index.vue')
       }
     ]
   },
