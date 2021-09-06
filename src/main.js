@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import './pollyfills'
 import VueRouter from 'vue-router'
+import store from './store'
 import VueNotify from 'vue-notifyjs'
 import VeeValidate from 'vee-validate'
 import lang from 'element-ui/lib/locale/lang/en'
@@ -42,5 +43,6 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   render: h => h(App),
+  store,
   router
 })

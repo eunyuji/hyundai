@@ -16,6 +16,7 @@
     "chartist": "^0.11.0",
     "easy-pie-chart": "^2.1.7",
     "element-ui": "^2.0.3",
+    "es6-promise": "^4.2.8",
     "fullcalendar": "^3.6.2",
     "google-maps": "^3.2.1",
     "jquery": "^3.2.1",
@@ -29,7 +30,8 @@
     "vue-form-wizard": "^0.7.0",
     "vue-nav-tabs": "^0.5.4",
     "vue-notifyjs": "^0.2.0",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
