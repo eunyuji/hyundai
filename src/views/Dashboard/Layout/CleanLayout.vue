@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <side-bar type="sidebar" :sidebar-links="$sidebar.sidebarLinks">
+<!--    <side-bar type="sidebar" :sidebar-links="$sidebar.sidebarLinks">
       <user-menu></user-menu>
       <form
         class="
@@ -19,30 +19,25 @@
         </div>
       </form>
       <mobile-menu></mobile-menu>
-    </side-bar>
-    <div class="main-panel">
+    </side-bar>-->
+    <div class="main-panel clean-panel">
       <top-navbar></top-navbar>
       <dashboard-content @click.native="toggleSidebar"> </dashboard-content>
-
       <content-footer></content-footer>
     </div>
   </div>
 </template>
 <style lang="scss"></style>
 <script>
-import TopNavbar from './TopNavbar.vue';
+import TopNavbar from './CleanTopNavbar.vue';
 import ContentFooter from './ContentFooter.vue';
 import DashboardContent from './Content.vue';
-import UserMenu from '@/components/UIComponents/SidebarPlugin/UserMenu.vue';
-import MobileMenu from '@/components/UIComponents/SidebarPlugin/MobileMenu.vue';
 
 export default {
   components: {
     TopNavbar,
     ContentFooter,
     DashboardContent,
-    UserMenu,
-    MobileMenu,
   },
   methods: {
     toggleSidebar() {
@@ -53,3 +48,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.clean-panel{
+  width: 100%;
+}
+</style>

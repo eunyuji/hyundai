@@ -16,6 +16,11 @@ const routes = [
         name: 'Main',
         component: Pages('Main/Index.vue'),
       },
+      {
+        path: 'summary',
+        name: 'summary',
+        component: Pages('Pages/summary.vue'),
+      },
     ],
   },
   ...guide,
