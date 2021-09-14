@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-<!--    <side-bar type="sidebar" :sidebar-links="$sidebar.sidebarLinks">
+    <!--    <side-bar type="sidebar" :sidebar-links="$sidebar.sidebarLinks">
       <user-menu></user-menu>
       <form
         class="
@@ -30,7 +30,7 @@
 <style lang="scss"></style>
 <script>
 import TopNavbar from './CleanTopNavbar.vue';
-import ContentFooter from './ContentFooter.vue';
+import ContentFooter from './CleanContentFooter.vue';
 import DashboardContent from './Content.vue';
 
 export default {
@@ -49,7 +49,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.clean-panel{
+.clean-panel {
   width: 100%;
 }
 </style>
