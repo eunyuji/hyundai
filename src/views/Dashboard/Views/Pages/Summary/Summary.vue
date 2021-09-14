@@ -1,5 +1,8 @@
 <template>
-  <div>summary</div>
+  <div>
+    summary
+    <router-link :to="{ name: 'Show-Reports' }">2ㅇ데소</router-link>
+  </div>
 </template>
 
 <script>

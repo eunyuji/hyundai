@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="text-center">SELECT DATA</h1>
-    <p class="category">Test List</p>
+    <p class="card-title">Test List</p>
     <fileAdd />
     <ul class="file-list">
       <li v-for="(item, key) in fileList" :key="key">
@@ -9,25 +9,32 @@
           {{ item }}
         </span>
         <div class="btn-box">
-          <button type="button" class="btn btn-sm btn-primary btn-fill btn-wd">
-            Select Data
+          <button type="button" class="btn btn-sm btn-wd">Select Data</button>
+          <button type="button" class="btn btn-sm btn-info btn-fill">
+            <span class="ti-settings"></span>
+            <span class="blind">설정</span>
           </button>
-          <button type="button" class="btn btn-sm btn-primary btn-fill btn-wd">
-            설정
+          <button type="button" class="btn btn-sm btn-info btn-fill">
+            <i class="fa fa-times"></i>
+            <span class="blind">삭제</span>
           </button>
-          <button type="button">삭제</button>
         </div>
       </li>
     </ul>
     <div class="btn-group full-group">
-      <button type="button" class="btn btn-default btn-lg">
-        빅데이터 분석
-      </button>
-      <button type="button" class="btn btn-default btn-lg">
-        데이터 합치기
-      </button>
+      <button type="button" class="btn btn-info btn-lg">빅데이터 분석</button>
+      <button type="button" class="btn btn-info btn-lg">데이터 합치기</button>
     </div>
-    <p class="category">Select Report Type</p>
+    <p class="card-title">Select Report Type</p>
+    <ul class="check-list">
+      <li v-for="(item, key) in checkList" :key="key">
+        <router-link :to="{ name: 'summary' }">
+          <span class="tit">{{ item.title }}</span>
+          <span class="txt">{{ item.txt }}</span>
+          <span class="ti-angle-right"></span>
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -51,12 +58,46 @@ export default {
           date: '2021.01.01',
         },
       ],
+      checkList: [
+        {
+          title: 'ENCAP',
+          txt: '(AEB) Car-to-Car',
+        },
+        {
+          title: 'ENCAP',
+          txt: '(AEB) VRU',
+        },
+        {
+          title: 'ENCAP',
+          txt: '(AEB) VRU',
+        },
+        {
+          title: 'ENCAP',
+          txt: '(AEB) VRU',
+        },
+        {
+          title: 'ENCAP',
+          txt: '(AEB) VRU',
+        },
+        {
+          title: 'ENCAP',
+          txt: '(AEB) VRU',
+        },
+        {
+          title: 'ENCAP',
+          txt: '(AEB) VRU',
+        },
+        {
+          title: 'ENCAP',
+          txt: '(AEB) VRU',
+        },
+      ],
     };
   },
 };
 </script>
 <style scoped lang="scss">
-.category {
+.card-title {
   margin-top: 40px;
 }
 .file-list {
@@ -68,7 +109,10 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    .btn-group {
+    .btn-box {
+      .btn {
+        margin: 0 5px;
+      }
     }
   }
 }
@@ -79,6 +123,35 @@ export default {
 
   .btn {
     flex: 1 1 50%;
+  }
+}
+.check-list {
+  display: flex;
+  margin: 20px -5px 0;
+  padding: 0;
+  flex-wrap: wrap;
+  li {
+    flex: 0 0 calc(33.3% - 10px);
+    margin: 0 5px;
+    list-style: none;
+    &:nth-child(n + 4) {
+      margin-top: 10px;
+    }
+  }
+  a {
+    position: relative;
+    display: block;
+    height: 76px;
+    padding: 17px 20px 20px;
+    border-radius: 2px;
+    border: solid 1px #d4d4d4;
+    background-color: #e4e4e4;
+    color: #404146;
+    .ti-angle-right {
+      position: absolute;
+      top: 19px;
+      right: 20px;
+    }
   }
 }
 </style>

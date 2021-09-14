@@ -5,7 +5,7 @@
       <span class="btn btn-sm">파일선택</span>
       <p class="label"></p>
     </span>
-    <button class="btn btn-primary btn-fill btn-wd">Load Data</button>
+    <button class="btn btn-info btn-fill btn-wd">Load Data</button>
   </div>
 </template>
 
@@ -19,12 +19,13 @@ export default {
 .file-add {
   position: relative;
   display: flex;
+  margin-top: 20px;
   justify-content: space-between;
   .box {
     padding: 5px;
     flex: 1 1 auto;
     border: 1px solid gray;
-    border-radius: 10px;
+    border-radius: 3px;
     input {
       position: absolute;
       top: 0;

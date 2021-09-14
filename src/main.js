@@ -18,6 +18,7 @@ import SideBar from './components/UIComponents/SidebarPlugin';
 import '@/assets/sass/paper-dashboard.scss';
 import '@/assets/sass/element_variables.scss';
 import '@/assets/sass/demo.scss';
+import '@/assets/sass/common.scss';
 
 import sidebarLinks from './sidebarLinks';
 // plugin setup
