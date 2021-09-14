@@ -145,13 +145,16 @@ export default {
     padding: 17px 20px 20px;
     border-radius: 2px;
     border: solid 1px #d4d4d4;
-    background-color: #e4e4e4;
+    background: #fafafa;
     color: #404146;
-    .ti-angle-right {
-      position: absolute;
-      top: 19px;
-      right: 20px;
+    &:hover {
+      background: #e4e4e4;
     }
+  }
+  .ti-angle-right {
+    position: absolute;
+    top: 19px;
+    right: 20px;
   }
 }
 </style>
