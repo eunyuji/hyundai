@@ -49,6 +49,11 @@ export default {
           pass: true,
           num: 85,
         },
+        {
+          title: 'test2',
+          pass: false,
+          num: 85,
+        },
       ],
     };
   },
