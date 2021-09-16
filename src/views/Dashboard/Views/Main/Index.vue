@@ -6,9 +6,12 @@
     <ul class="file-list">
       <li v-for="(item, key) in fileList" :key="key">
         <span class="name">
-          {{ item }}
+          {{ item.name }}
         </span>
         <div class="btn-box">
+          <span>
+            {{ item.date }}
+          </span>
           <button type="button" class="btn btn-sm btn-wd">Select Data</button>
           <button type="button" class="btn btn-sm btn-info btn-fill">
             <span class="ti-settings"></span>
