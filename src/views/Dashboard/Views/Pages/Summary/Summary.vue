@@ -175,6 +175,7 @@ export default {
         background-color: #e3fcef;
         font-weight: bold;
         font-size: 12px;
+        color: #026545;
         &.fail {
           background: #fce3e3;
           color: #650202;
