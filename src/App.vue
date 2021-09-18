@@ -5,6 +5,7 @@
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
+    <portal-target name="modal" multiple tag="div" class="modal-wrap" />
   </div>
 </template>
 

@@ -30,7 +30,7 @@
       <button
         type="button"
         class="btn btn-info btn-lg"
-        @click="showSwal('basic')"
+        @click="modalOpen({ name: 'modalTest' })"
       >
         빅데이터 분석
       </button>
@@ -46,15 +46,17 @@
         </router-link>
       </li>
     </ul>
+    <modalTest name="modalTest"></modalTest>
   </div>
 </template>
 <script>
 import fileAdd from '@/components/file-add/index.vue';
-import swal from 'sweetalert2';
+import modalTest from '@/views/Dashboard/Views/Main/modal.vue';
 export default {
   name: 'Main',
   components: {
     fileAdd,
+    modalTest,
   },
   data() {
     return {
@@ -141,65 +143,7 @@ export default {
       ],
     };
   },
-  methods: {
-    showSwal(type) {
-      if (type === 'basic') {
-        swal({
-          title: `데이터 처리`,
-          html:
-            '<div class="modal-cont">' +
-            '     <p class="desc">원하시는 기능을 선택해 주세요.</p>' +
-            '      <ul class="data-check-list">' +
-            '        <li>' +
-            '         <div class="n-radio radio radio-neutral">' +
-            '           <input id="radio1" type="radio" value="1" name="dateName">' +
-            '           <label for="radio1">데이터 변경</label>' +
-            '         </div>' +
-            '       </li>' +
-            '       <li>' +
-            '        <div class="n-radio radio radio-neutral">' +
-            '           <input id="radio2" type="radio" value="2" name="dateName">' +
-            '           <label for="radio2">데이터 연산</label>' +
-            '           </div>' +
-            '        </li>' +
-            '        <li>' +
-            '         <div class="n-radio radio radio-neutral">' +
-            '           <input id="radio3" type="radio" value="3" name="dateName">' +
-            '           <label for="radio3">데이터 crop</label>' +
-            '         </div>' +
-            '       </li>' +
-            '        <li>' +
-            '         <div class="n-radio radio radio-neutral">' +
-            '           <input id="radio4" type="radio" value="4" name="dateName">' +
-            '           <label for="radio4">데이터 Export</label>' +
-            '         </div>' +
-            '       </li>' +
-            '        <li>' +
-            '         <div class="n-radio radio radio-neutral">' +
-            '           <input id="radio5" type="radio" value="5" name="dateName">' +
-            '           <label for="radio5">분석 데이터 매칭</label>' +
-            '         </div>' +
-            '       </li>' +
-            '      </ul>' +
-            '    </div>',
-          showCancelButton: true,
-          confirmButtonClass: 'btn btn-success btn-fill',
-          cancelButtonClass: 'btn btn-danger btn-fill',
-          buttonsStyling: false,
-        })
-          .then((result) => {
-            console.log(result, 'result');
-            let dataList = document.getElementsByName('dateName');
-            dataList.forEach((el) => {
-              if (el.checked) {
-                this.dataCheck = el.value;
-              }
-            });
-          })
-          .catch(swal.noop);
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 <style scoped lang="scss">
