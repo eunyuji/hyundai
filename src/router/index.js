@@ -17,7 +17,7 @@ const routes = [
         component: Pages('Main/Index.vue'),
       },
       {
-        path: '/summary',
+        path: '/Summary',
         component: Pages('Pages/Summary/index.vue'),
 
         children: [

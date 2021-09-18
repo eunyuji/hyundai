@@ -1,10 +1,31 @@
-.btn {
-  border-radius: 2px;
-  border-width: 1px;
+//reset
+em {
+  font-style: normal;
 }
 button {
   background: none;
   border: none;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+//btn
+.btn {
+  border-radius: 2px;
+  border-width: 1px;
+  background: #fff;
+}
+.btn-md {
+  height: 44px;
+  line-height: 28px;
+}
+.btn-lg {
+  height: 50px;
 }
 .txt-btn {
   display: inline-flex;
@@ -13,12 +34,21 @@ button {
   text-decoration: underline;
   color: #4c98ad;
 }
+.btn-arg {
+  display: flex;
+  justify-content: right;
+  .btn + .btn {
+    margin-left: 10px;
+  }
+}
+//basic
 .blind {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
+//text
 .page-title {
   font-size: 24px;
   font-weight: 800;
@@ -30,4 +60,32 @@ button {
   font-size: 14px;
   font-weight: bold;
   color: #35373c;
+}
+//page-header
+.page-header {
+  display: flex;
+  margin: -30px -30px 0;
+  padding: 10px 30px;
+  border: none;
+  align-items: center;
+  background: #d5e1e4;
+  .prev {
+    display: inline-flex;
+    align-items: center;
+    justify-content: left;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: #35373c;
+  }
+  .page-header-title {
+    margin: 0;
+    line-height: 29px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #35373c;
+  }
+  .btn-group {
+    margin-left: auto;
+  }
 }

@@ -5,7 +5,7 @@
       <span class="file-btn">파일선택</span>
       <p class="label-txt">sadada</p>
     </span>
-    <button class="btn btn-info btn-fill btn-wd">Load Data</button>
+    <button class="btn btn-info btn-fill btn-wd btn-lg">Load Data</button>
   </div>
 </template>
 
