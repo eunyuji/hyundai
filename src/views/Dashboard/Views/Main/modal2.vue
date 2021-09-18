@@ -1,15 +1,11 @@
 <template>
   <modal :name="name" :type="type">
-    <template v-slot:header><h2 class="modal-title">주소검색</h2></template>
+    <template v-slot:header><h2 class="modal-title">주소검색22</h2></template>
     <template v-slot:content> 모달입니다 </template>
     <template v-slot:footer>
       <div>
         <button type="button" class="btn btn-md btn-fill btn-wd">취소</button>
-        <button
-          type="button"
-          class="btn btn-md btn-info btn-fill btn-wd"
-          @click="modalOpen({ name: 'modalTest2' })"
-        >
+        <button type="button" class="btn btn-md btn-info btn-fill btn-wd">
           다음
         </button>
       </div>

@@ -18,7 +18,19 @@
           </span>
         </p-checkbox>
         <div class="btn-box">
-          <button type="button" class="txt-btn">Setting</button>
+          <tootip>
+            <template v-slot:btn> Setting </template>
+            <template v-slot:cont>
+              <button
+                type="button"
+                class="btn"
+                @click="modalOpen({ name: 'modalTest' })"
+              >
+                데이터 처리
+              </button>
+              <button type="button" class="btn">데이터 분석</button>
+            </template>
+          </tootip>
           <button type="button" class="del-btn">
             <i class="fa fa-times"></i>
             <span class="blind">삭제</span>
@@ -27,13 +39,7 @@
       </li>
     </ul>
     <div class="btn-group full-group">
-      <button
-        type="button"
-        class="btn btn-info btn-lg"
-        @click="modalOpen({ name: 'modalTest' })"
-      >
-        빅데이터 분석
-      </button>
+      <button type="button" class="btn btn-info btn-lg">빅데이터 분석</button>
       <button type="button" class="btn btn-info btn-lg">데이터 합치기</button>
     </div>
     <p class="sub-title">Select Report Type</p>
@@ -47,16 +53,19 @@
       </li>
     </ul>
     <modalTest name="modalTest"></modalTest>
+    <modalTest2 name="modalTest2"></modalTest2>
   </div>
 </template>
 <script>
 import fileAdd from '@/components/file-add/index.vue';
 import modalTest from '@/views/Dashboard/Views/Main/modal.vue';
+import modalTest2 from '@/views/Dashboard/Views/Main/modal2.vue';
 export default {
   name: 'Main',
   components: {
     fileAdd,
     modalTest,
+    modalTest2,
   },
   data() {
     return {
@@ -149,7 +158,7 @@ export default {
 <style scoped lang="scss">
 .file-list {
   max-height: 350px;
-  overflow: auto;
+  overflow-y: auto;
   margin: 10px 0 0;
   padding: 0;
   border: 1px solid #c9c9c9;

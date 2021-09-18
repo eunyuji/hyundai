@@ -336,6 +336,7 @@ export default {
       color: #000;
     }
     .modal-footer {
+      background: #f7f7f7;
       flex: 0 0 auto;
       padding: 30px 20px 20px;
       box-sizing: border-box;
