@@ -4,14 +4,18 @@
       <div class="max-cont">
         <ul class="location">
           <li>
-            <router-link to="/">
+            <router-link to="/" v-if="depthList.length >= 1">
               <span class="ti-home"></span>Home
             </router-link>
+            <span class="txt" v-else> <span class="ti-home"></span>Home </span>
           </li>
           <li v-for="(item, key) in depthList" :key="key">
-            <router-link :to="{ name: item.name }"
-              >> {{ item.name }}</router-link
-            >
+            <span class="txt" v-if="depthList.length - 1 === key">{{
+              item.name
+            }}</span>
+            <router-link :to="{ name: item.name }" v-else>{{
+              item.name
+            }}</router-link>
           </li>
         </ul>
         <div class="card cont">
@@ -65,17 +69,35 @@ export default {
 }
 
 .fade-enter,
-  .fade-leave-to
-    /* .fade-leave-active in <2.1.8 */ {
+.fade-leave-to
+  /* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
 }
 .location {
   display: flex;
+  align-items: center;
   margin: 0 0 10px 0;
   padding: 0;
   li {
-    display: block;
+    display: flex;
+    align-items: center;
     list-style-type: none;
+    a {
+      display: inline-flex;
+      align-items: center;
+    }
+    .ti-home {
+      margin-right: 4px;
+    }
+    .txt {
+      color: #888;
+    }
+    & + li {
+      &:before {
+        content: '>';
+        margin: 0 4px;
+      }
+    }
   }
 }
 .max-cont {

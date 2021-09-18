@@ -1,9 +1,33 @@
 .btn {
-  border-radius: 3px;
+  border-radius: 2px;
+  border-width: 1px;
+}
+button {
+  background: none;
+  border: none;
+}
+.txt-btn {
+  display: inline-flex;
+  line-height: 17px;
+  font-size: 14px;
+  text-decoration: underline;
+  color: #4c98ad;
 }
 .blind {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
+}
+.page-title {
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  color: #35373c;
+}
+.sub-title {
+  margin: 50px 0 0 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #35373c;
 }

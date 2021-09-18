@@ -49,6 +49,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.main-panel {
+  background-color: #edeeee;
+  > .content {
+    min-height: calc(100% - 103px);
+  }
+}
 .clean-panel {
   width: 100%;
 }
