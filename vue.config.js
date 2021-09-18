@@ -1,6 +1,6 @@
 //const path = require('path');
 module.exports = {
-  lintOnSave: true,
+  lintOnSave: false,
   assetsDir: 'static',
   devServer: {
     port: 8081,
